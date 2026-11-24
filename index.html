@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0c0a0b">
 <link rel="icon" type="image/png" href="favicon.png">
-<meta property="og:title" content="UNIC">
-<meta property="og:description" content="UNIC reads your face with AI, the way Korean face readers have for centuries, then reads it against your birth chart.">
+<meta property="og:title" content="KLOVER">
+<meta property="og:description" content="KLOVER reads your face with AI, the way Korean face readers have for centuries, then reads it against your birth chart.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.klover.org/">
 <meta property="og:image" content="https://www.klover.org/assets/cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<title>UNIC</title>
-<meta name="description" content="UNIC reads your face with AI, the way Korean face readers have for centuries, then reads it against your birth chart.">
+<title>KLOVER</title>
+<meta name="description" content="KLOVER reads your face with AI, the way Korean face readers have for centuries, then reads it against your birth chart.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
@@ -140,6 +140,12 @@ blockquote { margin: 0; font-size: 21px; line-height: 1.45; font-weight: 600; le
 .shot figcaption { display: grid; gap: 4px; max-width: 272px; }
 .shot figcaption strong { font-size: 17px; font-weight: 700; }
 .shot figcaption span { font-size: 15px; color: var(--cream-2); }
+.real { margin-top: 120px; padding-top: 72px; border-top: 1px solid var(--line); row-gap: 48px; align-items: start; }
+.real-text { grid-column: 1 / span 3; display: grid; gap: 16px; align-content: start; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cream-3); }
+.real-text p { font-size: 16px; color: var(--cream-2); }
+.real-shots { grid-column: 4 / span 9; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; row-gap: 48px; }
+.rp .scr img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
 .phone { width: 100%; max-width: 272px; aspect-ratio: 272 / 582; border-radius: 46px; padding: 7px; background: #1b1819; box-shadow: inset 0 0 0 1px rgba(255,255,255,.09), 0 24px 48px rgba(0,0,0,.45); }
 .scr { position: relative; width: 100%; height: 100%; border-radius: 39px; overflow: hidden; background: #0e0b0c; font-size: 12px; line-height: 1.45; }
 .island { position: absolute; top: 9px; left: 50%; width: 78px; height: 23px; margin-left: -39px; border-radius: 12px; background: #000; z-index: 9; }
@@ -270,7 +276,12 @@ blockquote { margin: 0; font-size: 21px; line-height: 1.45; font-weight: 600; le
 .mem h3 { font-size: 20px; }
 .mem .role { font-size: 14px; color: var(--cream-2); }
 .mem p { font-size: 15px; color: var(--cream-3); margin-top: 8px; }
-.team .note { margin-top: 40px; }
+.facts { margin: 88px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; border-bottom: 1px solid var(--line); }
+.facts div { display: grid; gap: 6px; align-content: start; padding: 24px 0 28px; border-top: 1px solid var(--line); }
+.facts dt { font-size: 13px; font-weight: 600; color: var(--cream-3); }
+.facts dd { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.45; color: var(--cream); }
+.facts a { text-decoration: none; border-bottom: 1px solid rgba(243, 236, 226, .45); }
+.facts a:hover { border-bottom-color: var(--cream); }
 
 /* Get */
 .get { padding-block: 96px 120px; border-top: 1px solid var(--line); }
@@ -288,20 +299,27 @@ footer .grid { row-gap: 32px; }
 .f3 { grid-column: 9 / span 4; display: grid; gap: 8px; align-content: start; }
 footer a { color: var(--cream-2); text-decoration: none; }
 footer a:hover { color: var(--cream); }
-.colophon { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+.biz { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 28px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; }
+.colophon { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
 
 @media (max-width: 1000px) {
   nav { display: none; }
   .hero-text, .plate, .say p, .method h2, .method .head .lede, .app h2, .app .head .lede, .g-text, .g-card, .strips, .b-text, .prom h2, .runin, .team h2, .team .head .lede, .get-text, .get-fig, .f1, .f2, .f3 { grid-column: 1 / -1; }
   .cols { grid-template-columns: minmax(0, 1fr); }
   .screens, .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .real-text, .real-shots { grid-column: 1 / -1; }
+  .real-text { max-width: 34em; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .colophon { flex-direction: column; gap: 6px; }
   .twelve { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .g-card { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
   .runin { columns: 1; }
 }
 @media (max-width: 560px) {
   header .btn { display: none; }
-  .screens, .people { grid-template-columns: minmax(0, 1fr); }
+  .screens, .people, .facts { grid-template-columns: minmax(0, 1fr); }
+  .real-shots { grid-template-columns: repeat(3, 74%); column-gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .real-shots .shot { scroll-snap-align: start; }
   .twelve { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .frow, .actions { flex-direction: column; align-items: stretch; }
   .deck { width: 260px; height: 348px; }
@@ -315,7 +333,7 @@ footer a:hover { color: var(--cream); }
 <body>
 <header id="top-bar">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="img/unic-mark.png" alt="">UNIC</a>
+    <a class="brand" href="#top"><img src="img/unic-mark.png" alt="">KLOVER</a>
     <nav aria-label="Sections">
       <a href="#method" data-i18n="nav.1">How it reads</a>
       <a href="#app" data-i18n="nav.2">The app</a>
@@ -335,9 +353,9 @@ footer a:hover { color: var(--cream); }
     <div class="wrap grid">
       <div class="hero-text">
         <h1 id="h1" data-i18n="hero.h1">Your face, read by AI.</h1>
-        <p class="lede" data-i18n="hero.p">UNIC looks at one photo of your face the way Korean face readers have for centuries, then reads it against your birth chart. You get one reading in plain words, in about a minute.</p>
+        <p class="lede" data-i18n="hero.p">KLOVER looks at one photo of your face the way Korean face readers have for centuries, then reads it against your birth chart. You get one reading in plain words, in about a minute.</p>
         <div class="actions">
-          <a class="btn" href="https://play.google.com/store/apps" target="_blank" rel="noopener" data-i18n="hero.cta">Get UNIC on Google Play</a>
+          <a class="btn" href="https://play.google.com/store/apps" target="_blank" rel="noopener" data-i18n="hero.cta">Get KLOVER on Google Play</a>
           <a class="link" href="#method" data-i18n="hero.link">How a reading is made</a>
         </div>
         <p class="free" data-i18n="hero.free">Free. No sign-up, no name.</p>
@@ -363,11 +381,11 @@ footer a:hover { color: var(--cream); }
 
   <figure class="illus" aria-labelledby="illus-cap">
     <div class="im"><img src="img/mb-moon-road.webp" alt="A lantern-lit stone road at night, leading to a hanok gate under a full moon"></div>
-    <figcaption class="wrap cap" id="illus-cap" data-i18n="illus">The road to the Myeongbu, the ledger where your guardian is written. Illustration from the UNIC app.</figcaption>
+    <figcaption class="wrap cap" id="illus-cap" data-i18n="illus">The road to the Myeongbu, the ledger where your guardian is written. Illustration from the KLOVER app.</figcaption>
   </figure>
 
   <section class="say" aria-label="Why face and birth date">
-    <div class="wrap grid"><p data-i18n="say">In Korea a face was never read alone. A reader asked for your birthday too, because the face shows what you were given and the birth chart shows when it moves. UNIC's model works the same way.</p></div>
+    <div class="wrap grid"><p data-i18n="say">In Korea a face was never read alone. A reader asked for your birthday too, because the face shows what you were given and the birth chart shows when it moves. KLOVER's model works the same way.</p></div>
   </section>
 
   <section class="method" id="method" aria-labelledby="m-t">
@@ -455,7 +473,19 @@ footer a:hover { color: var(--cream); }
           <figcaption><strong data-i18n="c4.t">Keep coming back</strong><span data-i18n="c4.p">Your guardian, a reading for each day, and the friends you connect in your Myeongbu.</span></figcaption>
         </figure>
       </div>
-      <div class="after"><a class="btn" href="https://play.google.com/store/apps" target="_blank" rel="noopener" data-i18n="hero.cta">Get UNIC on Google Play</a></div>
+      <div class="real grid">
+        <div class="real-text">
+          <span class="eyebrow" data-i18n="a.re">In development</span>
+          <h3 data-i18n="a.rt">The Android build, as it runs today</h3>
+          <p data-i18n="a.rp">Captured from our current test build on a phone. The app runs in Korean and English.</p>
+        </div>
+        <div class="real-shots">
+          <figure class="shot"><div class="phone rp"><div class="scr"><img src="img/app-ask.jpg" width="522" height="1100" loading="lazy" alt="KLOVER app screen titled Ask anything, with suggested questions about love, work and friends"></div></div><figcaption><strong data-i18n="a.r1t">Ask anything</strong><span data-i18n="a.r1">The AI answers from your own face, palm and birth chart readings.</span></figcaption></figure>
+          <figure class="shot"><div class="phone rp"><div class="scr"><img src="img/app-chart.jpg" width="522" height="1100" loading="lazy" alt="KLOVER app birth chart tab showing the dog as the user's animal with a plain-language description"></div></div><figcaption><strong data-i18n="a.r2t">Your birth chart</strong><span data-i18n="a.r2">This year and your animal, read in plain words.</span></figcaption></figure>
+          <figure class="shot"><div class="phone rp"><div class="scr"><img src="img/app-soulmate.jpg" width="522" height="1100" loading="lazy" alt="KLOVER app soulmate screen showing metal and earth energies under the title The Grounded One"></div></div><figcaption><strong data-i18n="a.r3t">Your soulmate</strong><span data-i18n="a.r3">The element that balances yours, and why.</span></figcaption></figure>
+        </div>
+      </div>
+      <div class="after"><a class="btn" href="https://play.google.com/store/apps" target="_blank" rel="noopener" data-i18n="hero.cta">Get KLOVER on Google Play</a></div>
     </div>
   </section>
 
@@ -485,12 +515,12 @@ footer a:hover { color: var(--cream); }
   <section class="booth" id="booth" aria-labelledby="b-t">
     <div class="wrap grid">
       <div class="strips" aria-hidden="true">
-        <div class="strip b"><div class="fr"><img src="img/mb-guardian-horse-480.webp" alt=""></div><div class="fr"><img src="img/mb-guardian-monkey-480.webp" alt=""></div><div class="fr"><img src="img/mb-guardian-sheep-480.webp" alt=""></div><div class="fr"><img src="img/mb-guardian-pig-480.webp" alt=""></div><div class="ft"><div><b>UNIC</b><small>2026.11.14</small></div><svg data-qr="7" viewBox="0 0 25 25"></svg></div></div>
-        <div class="strip a"><div class="fr"><img src="img/mb-moon-road.webp" alt=""></div><div class="fr"><img src="img/mb-reaper-896.webp" alt="" style="object-position: 50% 40%;"></div><div class="fr"><img src="img/mb-guardian-dog-480.webp" alt=""></div><div class="fr"><img src="img/mb-talisman-480.webp" alt=""></div><div class="ft"><div><b>UNIC</b><small>2026.11.17</small></div><svg data-qr="3" viewBox="0 0 25 25"></svg></div></div>
+        <div class="strip b"><div class="fr"><img src="img/mb-guardian-horse-480.webp" alt=""></div><div class="fr"><img src="img/mb-guardian-monkey-480.webp" alt=""></div><div class="fr"><img src="img/mb-guardian-sheep-480.webp" alt=""></div><div class="fr"><img src="img/mb-guardian-pig-480.webp" alt=""></div><div class="ft"><div><b>KLOVER</b><small>2026.11.14</small></div><svg data-qr="7" viewBox="0 0 25 25"></svg></div></div>
+        <div class="strip a"><div class="fr"><img src="img/mb-moon-road.webp" alt=""></div><div class="fr"><img src="img/mb-reaper-896.webp" alt="" style="object-position: 50% 40%;"></div><div class="fr"><img src="img/mb-guardian-dog-480.webp" alt=""></div><div class="fr"><img src="img/mb-talisman-480.webp" alt=""></div><div class="ft"><div><b>KLOVER</b><small>2026.11.17</small></div><svg data-qr="3" viewBox="0 0 25 25"></svg></div></div>
       </div>
       <div class="b-text">
         <h2 id="b-t" data-i18n="b.t">You can also get read at the booth</h2>
-        <p data-i18n="b.p1">While you pose for your four cuts, UNIC reads your face and prints the reading under the photos.</p>
+        <p data-i18n="b.p1">While you pose for your four cuts, KLOVER reads your face and prints the reading under the photos.</p>
         <p data-i18n="b.p2">Scan the QR on the print to open the full reading of the five features. Tap “Add to my Myeongbu” and it stays in the app with everything else.</p>
         <p class="cap" data-i18n="b.c">The photo stays in the print.</p>
       </div>
@@ -513,9 +543,16 @@ footer a:hover { color: var(--cream); }
 
   <section class="team" id="team" aria-labelledby="t-t">
     <div class="wrap">
-      <div class="grid head"><h2 id="t-t" data-i18n="t.t">Who makes UNIC</h2><p class="lede" data-i18n="t.p">A small team working across the model, the readings and the app.</p></div>
+      <div class="grid head"><h2 id="t-t" data-i18n="t.t">Who makes KLOVER</h2><p class="lede" data-i18n="t.p">KLOVER is built by Nexrail Inc. in Seoul, a small team working across the model, the readings and the app.</p></div>
       <div class="people" id="people"></div>
-      <p class="cap note" data-i18n="t.n">These four profiles are placeholders until the real team is added.</p>
+      <dl class="facts">
+        <div><dt data-i18n="co.n">Company</dt><dd data-i18n="co.nv">Nexrail Inc. (주식회사 넥스레일)</dd></div>
+        <div><dt data-i18n="co.c">CEO</dt><dd data-i18n="co.cv">Yongpil Cho</dd></div>
+        <div><dt data-i18n="co.f">Founded</dt><dd data-i18n="co.fv">June 2026 · Software development</dd></div>
+        <div><dt data-i18n="co.r">Business registration no.</dt><dd>855-81-04458</dd></div>
+        <div><dt data-i18n="co.a">Office</dt><dd data-i18n="co.av">7F 50A, 38 Seolleung-ro 86-gil, Gangnam-gu, Seoul</dd></div>
+        <div><dt data-i18n="co.e">Contact</dt><dd><a href="mailto:team@klover.org">team@klover.org</a></dd></div>
+      </dl>
     </div>
   </section>
 
@@ -524,19 +561,20 @@ footer a:hover { color: var(--cream); }
       <div class="get-text">
         <h2 id="get-t" data-i18n="get.t">See what your face says.</h2>
         <p class="lede" data-i18n="get.p">One photo, one birth date, one reading. Free on Google Play.</p>
-        <div class="actions"><a class="btn" href="https://play.google.com/store/apps" target="_blank" rel="noopener" data-i18n="hero.cta">Get UNIC on Google Play</a></div>
+        <div class="actions"><a class="btn" href="https://play.google.com/store/apps" target="_blank" rel="noopener" data-i18n="hero.cta">Get KLOVER on Google Play</a></div>
       </div>
-      <figure class="get-fig"><img src="img/mb-talisman-480.webp" alt="A paper talisman with red seal script hanging in a doorway"><figcaption class="cap" data-i18n="get.c">A talisman from the four pillars screen. Illustration from the UNIC app.</figcaption></figure>
+      <figure class="get-fig"><img src="img/mb-talisman-480.webp" alt="A paper talisman with red seal script hanging in a doorway"><figcaption class="cap" data-i18n="get.c">A talisman from the four pillars screen. Illustration from the KLOVER app.</figcaption></figure>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap grid">
-    <div class="f1"><a class="brand" href="#top"><img src="img/unic-mark.png" alt="">UNIC</a><p data-i18n="f.1">AI face reading, read together with your birth chart.</p></div>
+    <div class="f1"><a class="brand" href="#top"><img src="img/unic-mark.png" alt="">KLOVER</a><p data-i18n="f.1">AI face reading, read together with your birth chart.</p></div>
     <div class="f2"><a href="#method" data-i18n="nav.1">How it reads</a><a href="#app" data-i18n="nav.2">The app</a><a href="#guardians" data-i18n="nav.3">Guardians</a><a href="#booth" data-i18n="nav.4">At the booth</a><a href="#team" data-i18n="nav.5">Team</a></div>
     <div class="f3"><p data-i18n="f.3a">Readings are for fun and are not health or financial advice.</p><p data-i18n="f.3b">Under 14, please read with a parent or guardian.</p></div>
-    <div class="colophon"><span>© 2026 UNIC</span><span data-i18n="f.col">Set in Schibsted Grotesk and Pretendard, with Noto Serif KR for the hanja. Illustrations from the UNIC app.</span></div>
+    <div class="biz"><span data-i18n="f.biz1">Nexrail Inc. (주식회사 넥스레일) · CEO Yongpil Cho · Business registration no. 855-81-04458</span><span data-i18n="f.biz2">7F 50A, 38 Seolleung-ro 86-gil, Gangnam-gu, Seoul, Republic of Korea</span><a href="mailto:team@klover.org">team@klover.org</a></div>
+    <div class="colophon"><span data-i18n="f.copy">© 2026 Nexrail Inc.</span><span data-i18n="f.col">Set in Schibsted Grotesk and Pretendard, with Noto Serif KR for the hanja. Illustrations from the KLOVER app.</span></div>
   </div>
 </footer>
 
@@ -563,11 +601,11 @@ footer a:hover { color: var(--cream); }
   var T = {
     en: {
       'nav.1':'How it reads','nav.2':'The app','nav.3':'Guardians','nav.4':'At the booth','nav.5':'Team','nav.cta':'Get the app',
-      'hero.h1':'Your face, read by AI.','hero.p':'UNIC looks at one photo of your face the way Korean face readers have for centuries, then reads it against your birth chart. You get one reading in plain words, in about a minute.',
-      'hero.cta':'Get UNIC on Google Play','hero.link':'How a reading is made','hero.free':'Free. No sign-up, no name.',
+      'hero.h1':'Your face, read by AI.','hero.p':'KLOVER looks at one photo of your face the way Korean face readers have for centuries, then reads it against your birth chart. You get one reading in plain words, in about a minute.',
+      'hero.cta':'Get KLOVER on Google Play','hero.link':'How a reading is made','hero.free':'Free. No sign-up, no name.',
       'fig.1':'The thirteen positions down the middle of the face, as drawn in classical face-reading manuals.',
-      'illus':'The road to the Myeongbu, the ledger where your guardian is written. Illustration from the UNIC app.',
-      'say':"In Korea a face was never read alone. A reader asked for your birthday too, because the face shows what you were given and the birth chart shows when it moves. UNIC's model works the same way.",
+      'illus':'The road to the Myeongbu, the ledger where your guardian is written. Illustration from the KLOVER app.',
+      'say':"In Korea a face was never read alone. A reader asked for your birthday too, because the face shows what you were given and the birth chart shows when it moves. KLOVER's model works the same way.",
       'm.t':'How a reading is made','m.p':'Two old methods and one model. Face reading looks at what you were given, the four pillars look at timing. They answer different questions, so they never compete.',
       'm.1t':'First, the face','m.1p':'From one photo the model finds the thirteen positions down the middle of the face, then the five features and the three zones around them.',
       'm.2t':'Then, the birth date','m.2p':'Your date and, if you know it, the hour give four pillars of two characters each. They are read from right to left.',
@@ -575,6 +613,8 @@ footer a:hover { color: var(--cream); }
       'm.3t':'Last, both together','m.3p':'The model weighs what the face shows against what the chart says about timing, and writes one reading.',
       'm.3q':'“A wide forehead and an open brow give you an early start. Born on a Metal day, you sharpen with practice. This season, finish what you already began.”','m.3c':'From an example reading.',
       'a.t':'The app, screen by screen','a.p':'Four screens and about a minute. There is no account to make and nothing to fill in about you except a date.','a.after':'Android for now.',
+      'a.re':'In development','a.rt':'The Android build, as it runs today','a.rp':'Captured from our current test build on a phone. The app runs in Korean and English.',
+      'a.r1t':'Ask anything','a.r1':'The AI answers from your own face, palm and birth chart readings.','a.r2t':'Your birth chart','a.r2':'This year and your animal, read in plain words.','a.r3t':'Your soulmate','a.r3':'The element that balances yours, and why.',
       'p1.t':'Face reading','p1.b':'Hold still','p1.s':'Reading the thirteen positions',
       'p2.t':'When were you born?','p2.s':'Your eight characters fill in as you type.','p2.y':'Year','p2.m':'Month','p2.d':'Day','p2.h':'Hour, if you know it','p2.hv':'7:30 PM','p2.c':'Your eight characters','p2.btn':'Read face and chart',
       'p3.k':"Mina's reading",'p3.t':'A wide brow and steady Metal','p3.g1':'wide','p3.g2':'open','p3.g3':'Yang Metal',
@@ -588,23 +628,26 @@ footer a:hover { color: var(--cream); }
       'g.t':'And a guardian for the day you were born','g.p':'Every day in the sixty-day cycle carries one of twelve earthly branches, and each branch has a guardian. Yours depends on the day, not the year, so it can differ from your zodiac sign.',
       'g.l':'Your birth date (solar calendar)','g.b':'Find my guardian','g.r':'Read the rest in the app','g.n':'Nothing you type here leaves this page.',
       'g.c':'The keeper of the Myeongbu, before your guardian is written in. Enter a date to turn the card.',
-      'b.t':'You can also get read at the booth','b.p1':'While you pose for your four cuts, UNIC reads your face and prints the reading under the photos.',
+      'b.t':'You can also get read at the booth','b.p1':'While you pose for your four cuts, KLOVER reads your face and prints the reading under the photos.',
       'b.p2':'Scan the QR on the print to open the full reading of the five features. Tap “Add to my Myeongbu” and it stays in the app with everything else.','b.c':'The photo stays in the print.',
       'pr.t':"What we don't ask for",'pr.1t':'No account.','pr.1':'We never ask for your name or your phone number.','pr.2t':'Two characters, not your birthday.','pr.2':"Your birth date isn't stored as is. Only the two characters used in the calculation stay.",
       'pr.3t':'The hour stays with you.','pr.3':'Birth time is asked only on the four pillars screen and stays on your device.','pr.4t':'Erase it whenever you like.','pr.4':'Delete your seal any time. The connections go with it.',
       'pr.5t':"It's for fun.",'pr.5':'A reading is not health or financial advice.','pr.6t':'Under 14?','pr.6':'Read it with a parent or guardian.',
-      't.t':'Who makes UNIC','t.p':'A small team working across the model, the readings and the app.','t.n':'These four profiles are placeholders until the real team is added.',
-      'get.t':'See what your face says.','get.p':'One photo, one birth date, one reading. Free on Google Play.','get.c':'A talisman from the four pillars screen. Illustration from the UNIC app.',
+      't.t':'Who makes KLOVER','t.p':'KLOVER is built by Nexrail Inc. in Seoul, a small team working across the model, the readings and the app.',
+      'co.n':'Company','co.nv':'Nexrail Inc. (주식회사 넥스레일)','co.c':'CEO','co.cv':'Yongpil Cho','co.f':'Founded','co.fv':'June 2026 · Software development',
+      'co.r':'Business registration no.','co.a':'Office','co.av':'7F 50A, 38 Seolleung-ro 86-gil, Gangnam-gu, Seoul','co.e':'Contact',
+      'get.t':'See what your face says.','get.p':'One photo, one birth date, one reading. Free on Google Play.','get.c':'A talisman from the four pillars screen. Illustration from the KLOVER app.',
       'f.1':'AI face reading, read together with your birth chart.','f.3a':'Readings are for fun and are not health or financial advice.','f.3b':'Under 14, please read with a parent or guardian.',
-      'f.col':'Set in Schibsted Grotesk and Pretendard, with Noto Serif KR for the hanja. Illustrations from the UNIC app.'
+      'f.biz1':'Nexrail Inc. (주식회사 넥스레일) · CEO Yongpil Cho · Business registration no. 855-81-04458','f.biz2':'7F 50A, 38 Seolleung-ro 86-gil, Gangnam-gu, Seoul, Republic of Korea','f.copy':'© 2026 Nexrail Inc.',
+      'f.col':'Set in Schibsted Grotesk and Pretendard, with Noto Serif KR for the hanja. Illustrations from the KLOVER app.'
     },
     ko: {
       'nav.1':'풀이 방식','nav.2':'앱','nav.3':'수호신','nav.4':'부스','nav.5':'팀','nav.cta':'앱 받기',
-      'hero.h1':'AI가 읽는 내 얼굴','hero.p':'UNIC은 사진 한 장으로 얼굴을 읽어요. 수백 년 이어진 한국 관상의 방식 그대로요. 그다음 사주와 맞춰 보고, 쉬운 말로 된 풀이 하나를 1분 남짓이면 건네요.',
-      'hero.cta':'Google Play에서 UNIC 받기','hero.link':'풀이가 만들어지는 과정','hero.free':'무료예요. 가입도 이름도 없어요.',
+      'hero.h1':'AI가 읽는 내 얼굴','hero.p':'KLOVER는 사진 한 장으로 얼굴을 읽어요. 수백 년 이어진 한국 관상의 방식 그대로요. 그다음 사주와 맞춰 보고, 쉬운 말로 된 풀이 하나를 1분 남짓이면 건네요.',
+      'hero.cta':'Google Play에서 KLOVER 받기','hero.link':'풀이가 만들어지는 과정','hero.free':'무료예요. 가입도 이름도 없어요.',
       'fig.1':'옛 관상서에 그려진, 얼굴 한가운데의 열세 자리.',
-      'illus':'명부로 가는 길. 내 수호신이 적히는 장부가 이 길 끝에 있어요. UNIC 앱의 일러스트예요.',
-      'say':'한국에서 얼굴은 혼자 읽지 않았어요. 관상가는 생일도 함께 물었죠. 얼굴은 타고난 것을, 사주는 그것이 움직이는 때를 보여주니까요. UNIC의 모델도 똑같이 읽어요.',
+      'illus':'명부로 가는 길. 내 수호신이 적히는 장부가 이 길 끝에 있어요. KLOVER 앱의 일러스트예요.',
+      'say':'한국에서 얼굴은 혼자 읽지 않았어요. 관상가는 생일도 함께 물었죠. 얼굴은 타고난 것을, 사주는 그것이 움직이는 때를 보여주니까요. KLOVER의 모델도 똑같이 읽어요.',
       'm.t':'풀이는 이렇게 만들어져요','m.p':'오래된 방법 둘에 모델 하나. 관상은 타고난 것을, 사주는 때를 봐요. 서로 다른 질문에 답하니 부딪힐 일이 없어요.',
       'm.1t':'먼저, 얼굴','m.1p':'사진 한 장에서 얼굴 한가운데의 열세 자리를 찾고, 그 둘레의 오관과 삼정을 읽어요.',
       'm.2t':'다음, 태어난 날','m.2p':'날짜와, 안다면 태어난 시각까지 넣으면 두 글자씩 네 기둥이 세워져요. 오른쪽에서 왼쪽으로 읽어요.',
@@ -612,6 +655,8 @@ footer a:hover { color: var(--cream); }
       'm.3t':'마지막으로, 함께','m.3p':'얼굴이 보여주는 것과 사주가 말하는 때를 견주어, 모델이 풀이 하나를 써요.',
       'm.3q':'“넓은 이마와 트인 미간은 이른 출발을 말해요. 금의 날에 태어나 갈고닦을수록 빛나요. 이번 계절엔 이미 시작한 일을 끝까지 밀어붙여 보세요.”','m.3c':'풀이 예시에서 가져왔어요.',
       'a.t':'앱을 한 화면씩','a.p':'네 화면, 1분 남짓이면 끝나요. 만들 계정도 없고, 날짜 말고는 적을 것도 없어요.','a.after':'지금은 안드로이드만 있어요.',
+      'a.re':'개발 중','a.rt':'지금 돌아가는 안드로이드 앱','a.rp':'현재 시험 빌드를 폰에서 그대로 캡처했어요. 앱은 한국어와 영어로 쓸 수 있어요.',
+      'a.r1t':'무엇이든 물어보기','a.r1':'AI가 내 얼굴·손금·사주 풀이를 근거로 답해요.','a.r2t':'나의 사주','a.r2':'올해의 흐름과 나의 동물을 쉬운 말로 풀어 줘요.','a.r3t':'나의 소울메이트','a.r3':'내 기운을 받쳐 주는 기운과, 그 이유.',
       'p1.t':'관상','p1.b':'잠시 그대로 있어 주세요','p1.s':'열세 자리를 읽는 중',
       'p2.t':'언제 태어났나요?','p2.s':'입력하는 대로 여덟 글자가 채워져요.','p2.y':'년','p2.m':'월','p2.d':'일','p2.h':'태어난 시각 (아는 경우)','p2.hv':'오후 7:30','p2.c':'나의 여덟 글자','p2.btn':'얼굴과 사주 함께 읽기',
       'p3.k':'미나의 풀이','p3.t':'넓은 이마, 단단한 금','p3.g1':'넓음','p3.g2':'트임','p3.g3':'양금',
@@ -625,19 +670,22 @@ footer a:hover { color: var(--cream); }
       'g.t':'그리고 태어난 날의 수호신','g.p':'육십갑자로 도는 날마다 열두 지지 중 하나가 붙고, 지지마다 수호신이 있어요. 해가 아니라 날로 정해져서 내 띠와 다를 수 있어요.',
       'g.l':'태어난 날 (양력)','g.b':'내 수호신 찾기','g.r':'나머지는 앱에서 읽기','g.n':'여기 입력한 내용은 이 페이지 밖으로 나가지 않아요.',
       'g.c':'수호신이 적히기 전, 명부를 지키는 이. 날짜를 넣으면 카드가 뒤집혀요.',
-      'b.t':'부스에서도 읽을 수 있어요','b.p1':'네 컷을 찍는 동안 UNIC이 얼굴을 읽고, 사진 아래에 풀이를 인쇄해요.',
+      'b.t':'부스에서도 읽을 수 있어요','b.p1':'네 컷을 찍는 동안 KLOVER가 얼굴을 읽고, 사진 아래에 풀이를 인쇄해요.',
       'b.p2':'인쇄물의 QR을 찍으면 다섯 부위 전체 풀이가 열려요. 「내 명부에 담기」를 누르면 앱에도 다른 기록과 함께 남아요.','b.c':'사진은 인쇄물에만 남아요.',
       'pr.t':'묻지 않는 것','pr.1t':'계정이 없어요.','pr.1':'이름도 전화번호도 묻지 않아요.','pr.2t':'생일 대신 두 글자만.','pr.2':'태어난 날은 그대로 두지 않아요. 셈에 쓰는 두 글자만 남겨요.',
       'pr.3t':'시각은 내 기기에.','pr.3':'태어난 시각은 사주 화면에서만 묻고, 이 기기에만 남아요.','pr.4t':'언제든 지워요.','pr.4':'만든 도장은 언제든 지울 수 있어요. 이어진 것도 함께 사라져요.',
       'pr.5t':'재미로 보는 풀이예요.','pr.5':'건강이나 돈에 대한 조언이 아니에요.','pr.6t':'만 14세 미만이라면,','pr.6':'보호자와 함께 봐 주세요.',
-      't.t':'UNIC을 만드는 사람들','t.p':'모델과 풀이, 그리고 앱을 함께 만드는 작은 팀이에요.','t.n':'아래 네 명은 실제 팀으로 바뀌기 전까지 쓰는 임시 프로필이에요.',
-      'get.t':'내 얼굴이 하는 말을 들어 보세요.','get.p':'사진 한 장, 태어난 날 하나, 풀이 하나. Google Play에서 무료예요.','get.c':'사주 화면의 부적. UNIC 앱의 일러스트예요.',
+      't.t':'KLOVER를 만드는 곳','t.p':'KLOVER는 서울의 주식회사 넥스레일이 만들어요. 모델과 풀이, 그리고 앱을 함께 만드는 작은 팀이에요.',
+      'co.n':'회사','co.nv':'주식회사 넥스레일 (Nexrail Inc.)','co.c':'대표','co.cv':'조용필','co.f':'설립','co.fv':'2026년 6월 · 소프트웨어 개발',
+      'co.r':'사업자등록번호','co.a':'사무실','co.av':'서울특별시 강남구 선릉로86길 38, 7층 50A호(대치동)','co.e':'문의',
+      'get.t':'내 얼굴이 하는 말을 들어 보세요.','get.p':'사진 한 장, 태어난 날 하나, 풀이 하나. Google Play에서 무료예요.','get.c':'사주 화면의 부적. KLOVER 앱의 일러스트예요.',
       'f.1':'사주와 함께 읽는 AI 관상.','f.3a':'풀이는 재미로 보는 것이며 건강이나 돈에 대한 조언이 아니에요.','f.3b':'만 14세 미만은 보호자와 함께 봐 주세요.',
-      'f.col':'본문은 Schibsted Grotesk와 Pretendard, 한자는 Noto Serif KR로 짰어요. 일러스트는 UNIC 앱에서 가져왔어요.'
+      'f.biz1':'주식회사 넥스레일 · 대표 조용필 · 사업자등록번호 855-81-04458','f.biz2':'서울특별시 강남구 선릉로86길 38, 7층 50A호(대치동)','f.copy':'© 2026 주식회사 넥스레일',
+      'f.col':'본문은 Schibsted Grotesk와 Pretendard, 한자는 Noto Serif KR로 짰어요. 일러스트는 KLOVER 앱에서 가져왔어요.'
     }
   };
   var TEAM = [
-    { art:'tiger', b:2, en:['Jiwoo Han','Co-founder, CEO','Sets the direction and keeps the promises on this page.'], ko:['한지우','공동창업자, 대표','방향을 정하고, 이 페이지의 약속을 지켜요.'] },
+    { art:'tiger', b:2, en:['Yongpil Cho','CEO','Sets the direction and keeps the promises on this page.'], ko:['조용필','대표','방향을 정하고, 이 페이지의 약속을 지켜요.'] },
     { art:'dragon', b:4, en:['Taeo Lim','Co-founder, CTO','Builds the face reading model and the math behind the four pillars.'], ko:['임태오','공동창업자, CTO','관상 모델과 사주 계산을 만들어요.'] },
     { art:'rabbit', b:3, en:['Minji Park','Head of Reading','Turns the old manuals into sentences people actually read.'], ko:['박민지','풀이 총괄','옛 관상서를 사람들이 정말 읽는 문장으로 옮겨요.'] },
     { art:'horse', b:6, en:['Doyun Seo','Head of Product','Designs every screen, from the scan to the Myeongbu.'], ko:['서도윤','프로덕트 총괄','스캔부터 명부까지 모든 화면을 설계해요.'] }
@@ -707,7 +755,7 @@ footer a:hover { color: var(--cream); }
     box.classList.remove('err'); link.hidden = false; var b = found.branch;
     txt.textContent = lang === 'ko' ? '내 수호신은 ' + AN.ko[b] + KO_IS[b] + '. ' + found.text + '일에 태어났어요.' : 'Your guardian is the ' + AN.en[b] + '. You were born on a ' + found.text + ' day.';
     document.getElementById('rear-n').textContent = lang === 'ko' ? AN.ko[b] : 'The ' + AN.en[b];
-    document.getElementById('g-cap').textContent = lang === 'ko' ? AN.ko[b] + ', ' + BR[b] + '. 열두 수호신 중 하나예요. UNIC 앱의 일러스트예요.' : 'The ' + AN.en[b] + ', ' + BR[b] + ', one of the twelve guardians. Illustration from the UNIC app.';
+    document.getElementById('g-cap').textContent = lang === 'ko' ? AN.ko[b] + ', ' + BR[b] + '. 열두 수호신 중 하나예요. KLOVER 앱의 일러스트예요.' : 'The ' + AN.en[b] + ', ' + BR[b] + ', one of the twelve guardians. Illustration from the KLOVER app.';
   }
   function applyLang(l) {
     lang = l === 'ko' ? 'ko' : 'en'; document.documentElement.lang = lang; var d = T[lang];
